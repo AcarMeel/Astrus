@@ -27,7 +27,96 @@
     <li>Le daremos estilo a los statuses, para eso modificaremos statuses.css.scss</li>
     <li>Modificamos el archivo statuses.js.coffee</li>
     <li>utilizar el comando <b>rake routes</b> nos damos cuenta q rutas usar en nuestro poryecto</li>
-    <li>Guardamos todos los cambios realizados en github <b>git add .</b> y con <b>git status</b> podemos ver lo q ya hemos guardado</li>
+    <li>Guardamos todos los cambios realizados en github <b>git add .</b> y con <b>git status</b> podemos ver lo q ya hemos guardado y luego <b>git commit -m "algun msj"</b> y luego <b>git push origin master</b></li>
+    <li>instalar una nueva gema para el registro o ingreso de nuevos usuarios <b>abrimos gemfile y escribimos gem 'devise' y en la consola ponemos bundle y luego de nuevo en la consola ponemos rails generate devise:install</b></li>
+    <li>seguimos las instrucciones q nos indica la consola: en config-->environments-->development.rb copiamos al final <b>   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }</b></li>
+    <li>en config-->routes.rb definimos una ruta raiz y en la carpeta public eliminar cualquier index.html q exista.</li>
+    <li>INSTRUCCIONES DESPUES DE DEVISE-->Some setup you must do manually if you haven't yet:
+
+  1. Ensure you have defined default url options in your environments files. He
+e
+     is an example of default_url_options appropriate for a development environ
+ent
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost', port: 30
+0 }
+
+     In production, :host should be set to the actual host of your application.
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root to: "home#index"
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  4. If you are deploying on Heroku with Rails 3.2 only, you may want to set:
+
+       config.assets.initialize_on_precompile = false
+
+     On config/application.rb forcing your application to not access the DB
+     or load models when precompiling your assets.
+
+    Crear un modelo para validar, registrar usuarios
+     rails generate devise user
+
+     Esto me crea en el proyecto lo siguiente:
+      invoke  active_record
+ create    db/migrate/20150621024100_devise_create_users.rb
+ create    app/models/user.rb
+ invoke    test_unit
+ create      test/unit/user_test.rb
+ create      test/fixtures/users.yml
+ insert    app/models/user.rb
+  route  devise_for :users
+
+  En db/migrate/20150621024100_devise_create_users.rb agregamos 3 campos más nombre,apellido,nombreperfil. Para
+  integrarlo a nuestra BD debemos correr el comando rake db:migrate
+
+  Corremos rake routes para saber q rutas en el proyecto tenemos disponibles para utilizar el modelo de user
+          new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                statuses GET    /statuses(.:format)            statuses#index
+                         POST   /statuses(.:format)            statuses#create
+              new_status GET    /statuses/new(.:format)        statuses#new
+             edit_status GET    /statuses/:id/edit(.:format)   statuses#edit
+                  status GET    /statuses/:id(.:format)        statuses#show
+                         PUT    /statuses/:id(.:format)        statuses#update
+                         DELETE /statuses/:id(.:format)        statuses#destroy
+                    root        /                              statuses#index
+
+
+  5. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+Ahora en la carpeta views tenemos una llamada devise
+en registration new.hmtl.erb modificamos la estructura
+=============================================================================== </li>
+<li>Nos vamos al modelo user.rb en app-->models y hacemos unos cambios</li>
+<li>agregamos en gemfile una nueva gema protected_attributes y corremos en la consola el comando bundle</li>
+<li>corremos el comando rails console</li>
+<li>exit para salir de la consola</li>
+<li>Agregar un ID a cada usuario, para esto modificamos la BD con el comando <b>rails generate migration add_user_id_to_statuses</b></li>
+<li>en  db/migrate/20150621055655_add_user_id_to_statuses.rb podemos hacer los cambios</li>
+<li>luego de la modificacion de ese archivo en la consola <b>rake db:migrate</b></li>
+<li>como ahora tenemos un id debemos borrar los posts viejos q no lo tenian, para esto <b>rails console</b> y luego <b>Status.delete_all</b></li>
+<li><b>git status</b> y <b>git add .</b></li>
 </body>
 
 </html>

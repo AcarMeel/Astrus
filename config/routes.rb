@@ -1,6 +1,10 @@
 Astrus::Application.routes.draw do
+  devise_for :users
+
   resources :statuses
 
+  #despues de instalar devise, la instruccion 2 nos indica lo siguiente, ahora ya podemos ir a statuses desde la raiz:
+  root to: 'statuses#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
