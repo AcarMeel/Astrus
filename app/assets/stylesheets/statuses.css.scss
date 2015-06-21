@@ -1,3 +1,36 @@
 // Place all the styles related to the statuses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.status {
+    border-bottom: solid 1px #404040;
+    padding: 5px 0;
+}
+
+.status p {
+    margin: 4px 0;
+}
+/*Clases para ocultar y mostrar los enlaces editar y borrar statuses*/
+
+.status .admin {
+    display: none;
+}
+
+.status:hover .admin {
+    display: inline;
+}
+
+.status.hover {
+    background-color: #0F7365;
+    /*Thanks to http://css3generator.com/*/
+    
+    -webkit-transition: background 1s ease-in;
+    -moz-transition: background 1s ease-in;
+    -ms-transition: background 1s ease-in;
+    -o-transition: background 1s ease-in;
+    transition: background 1s ease-in;
+    /*ease linear ease-in ease-out ease-in-out*/
+}
+
+.status.hover a {
+    color: white;
+}

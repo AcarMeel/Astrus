@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Steps</title>
+</head>
+
+<body>
+    <li>Descargar rubyinstaller de <b>http://railsinstaller.org/en</b></li>
+    <li>crear proyecto. abrimos el gitbash y ponemos <b>rails new Astrus</b> </li>
+    <li>corremos el servidor para verificar que sirva nuestra aplicacion: <b>rails s</b></li>
+    <li>Creamos una nueva vista en nuestro proyecto <b>rails generate scaffold status nombre:string contenido:text</b></li>
+    <li>Vemos que en app-->models-->status.rb se creo nuestro nuevo modelo.</li>
+    <li>Cada vez que realizamos algun cambio debemos hacer una actualizacion de los datos, en la consola ponemos <b>rake db:migrate</b></li>
+    <li>correr el servidor de nuevo ir a la ruta localhost:3000/statuses</li>
+    <li>Crear un control de versiones de nuestro proyecto utilizando github. Iniciamos creando el repositorio con <b>git init</b></li>
+    <li>Agregamos nuestro proyectp <b>git add .</b></li>
+    <li><b>git commit -m "Mensaje"</b></li>
+    <li>Vamos a github.com y creamos el nombre del repositorio. Seguimos los pasos <b>git remote add origin https://github.com/AcarMeel/Astrus.git</b>
+        <br> <b>git push -u origin master</b></li>
+    <li>echo # Astrus >> README.md git init git add README.md git commit -m "first commit" git remote add origin https://github.com/AcarMeel/Astrus.git git push -u origin master</li>
+    <li>Los partials siempre inician con guion bajo</li>
+    <li>borrar contenido de scaffold.css.scss</li>
+    <li>ir a application.html.erb y cambiar la estructura</li>
+    <li>modificar index.hmtl.erb en app-->views-->statuses. Borramos todo y creamos una nueva estructura.</li>
+    <li>Le daremos estilo a los statuses, para eso modificaremos statuses.css.scss</li>
+    <li>Modificamos el archivo statuses.js.coffee</li>
+    <li>utilizar el comando <b>rake routes</b> nos damos cuenta q rutas usar en nuestro poryecto</li>
+    <li>Guardamos todos los cambios realizados en github <b>git add .</b> y con <b>git status</b> podemos ver lo q ya hemos guardado</li>
+</body>
+
+</html>

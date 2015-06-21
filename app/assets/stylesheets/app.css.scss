@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Engagement);
+@import url(http://fonts.googleapis.com/css?family=Grand+Hotel);
+@import url(http://fonts.googleapis.com/css?family=Patrick+Hand);
+
+body { 
+	padding-top: 70px; /*importante cuando se usa navbar-fixed-top*/
+}
+/*Clases para las fuentes*/
+.Engagement-font {
+	font-family: 'Engagement', cursive;
+	font-size: 2.5em;
+}
+
+.gh-font {
+	font-family: 'Grand Hotel', cursive;
+	font-size: 2.5em;
+}
+
+.ph-font {
+	font-family: 'Patrick Hand', cursive;
+}
