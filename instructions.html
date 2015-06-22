@@ -116,7 +116,20 @@ en registration new.hmtl.erb modificamos la estructura
 <li>en  db/migrate/20150621055655_add_user_id_to_statuses.rb podemos hacer los cambios</li>
 <li>luego de la modificacion de ese archivo en la consola <b>rake db:migrate</b></li>
 <li>como ahora tenemos un id debemos borrar los posts viejos q no lo tenian, para esto <b>rails console</b> y luego <b>Status.delete_all</b></li>
-<li><b>git status</b> y <b>git add .</b></li>
-</body>
+<li><b>git status</b> y <b>git add .</b> y <b>git commit -m "msj"</b> <b>git push</b></li>
+<li>descargar la gema simple form <b>https://github.com/plataformatec/simple_form</b> Para esto ir al gemfile y escribir la gema,bundle install, rails generate simple_form:install --bootstrap</li>
+<li>Inside your views, use the 'simple_form_for' with one of the Bootstrap form
+classes, '.form-horizontal' or '.form-inline', as the following:
 
+  = simple_form_for(@user, html: { class: 'form-horizontal' }) do |form|</li>
+  <li>Hacer cambios en _form.html.erb y show.html.erb de la carpeta statuses, en la carpeta models status.rb y user.rb, en controllers modificamos ambos y corremos rails console para eliminar todos los usuarios y estados y empezar de cero --> User.delete_all,Status.delete_all, exit
+</li>
+  <li>en los controladores estan las alertas de si se creo,modifico o elimino un usuario</li>
+  <li>Recordemos q rails console nos permite hacer modificaciones a la BD, como u=User.first</li>
+  <li>Hacemos modificaciones creando nombre_completo en user.rb,show e index en statuses</li>
+  <li>Guardamos lo q hemos hecho hasta ahora, git status para ver q cambios hemos hecho, git add . ,git commit -m "msj"</li>
+</body>
+www.descargasdelaweb.com
 </html>
+
+

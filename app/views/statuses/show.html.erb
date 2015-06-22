@@ -1,15 +1,12 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <b>Nombre:</b>
-  <%= @status.nombre %>
+  <strong>Nombre:</strong>
+  <%= @status.user.nombre_completo %>
 </p>
 
 <p>
-  <b>Contenido:</b>
+  <strong>Contenido:</strong>
   <%= @status.contenido %>
 </p>
-
-
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+<%= link_to 'Editar', edit_status_path(@status),class: "btn btn-warning " %> 
+<%= link_to 'Regresar', statuses_path, class: "btn btn-default" %>

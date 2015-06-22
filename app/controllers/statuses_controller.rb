@@ -1,4 +1,6 @@
 class StatusesController < ApplicationController
+  #I WROTE THIS CAUSE I SAW IT ON THE VIDEO--- BY ACARMEEL
+  before_action :set_status, only: [:show, :edit, :update, :destroy]
   # GET /statuses
   # GET /statuses.json
   def index
@@ -79,5 +81,16 @@ class StatusesController < ApplicationController
       format.html { redirect_to statuses_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  #use callbacks to share common setup or constraints between actions
+  def set_status
+    @status = Status.find(params[:id])
+  end
+
+  #never trust parameters from the scary internet, only allow the white list through
+  def status_params
+      params.require(:status).permit(:user_id , :contenido)
   end
 end

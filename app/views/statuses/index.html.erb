@@ -1,17 +1,17 @@
 <div class="page-header">
   <h1 class="ph-font">Astrus Recientes</h1>
 </div>
-<%= link_to "Crear post", new_status_path, class:  "btn btn-danger" %>
+<%= link_to "Crear post", new_status_path, class:  "btn btn-create-post" %>
 <br>
 <% @statuses.each do |status|%>
       <div class="status">
-        <strong><%= status.nombre %></strong>
+        <strong><%= status.user.nombre_completo %></strong> 
         <p><%= status.contenido %></p>
         <div>
           <%= link_to time_ago_in_words(status.created_at) , status %>
           <span class="admin">
-          | <%= link_to "Editar", edit_status_path(status) %> |
-            <%= link_to "Borrar", status, method: :delete, data: {confirm: "¿Seguro que desea borrar el estado?"} %>
+            <%= link_to "Editar", edit_status_path(status),class: "btn btn-warning btn-xs" %> 
+            <%= link_to "Borrar", status, method: :delete, data: {confirm: "¿Seguro que desea borrar el estado?"},class: "btn btn-danger btn-xs" %>
           </span>
         </div>
       </div>

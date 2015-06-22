@@ -19,3 +19,14 @@ body {
 .ph-font {
 	font-family: 'Patrick Hand', cursive;
 }
+
+/*Clase para el boton de la pagina statuses/index*/
+.btn-create-post {
+	background-color: #C23B4A;
+	color: white;
+}
+
+.btn-create-post:hover {
+	background-color: #FF7272;
+	color: white;
+}
