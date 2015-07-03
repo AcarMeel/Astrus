@@ -44,8 +44,14 @@ Astrus</a>
 	  </div>
 </nav>
 	<div class="container">
-	   <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+		<!--MOSTRAR ALERTAS DINAMICAMENTE-->
+		<% flash.each do | type , message | %>
+	   		<div class="alert <%=flash_class type%> alert-dismissible ">
+			  <button type="button" class="close" data-dismiss="alert">×</button>
+			  <%= message %>
+			</div>
+		<%end%>
+		<!--RENDERIZAR CONTENIDO-->
 		<%= yield %>
 	</div>
 

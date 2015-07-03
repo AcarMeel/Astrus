@@ -11,6 +11,18 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :statuses  #un usuario puede tener muchos status
+
+  #validar el nombre
+  validates :primer_nombre, presence: true
+  validates :primer_apellido, presence: true
+  validates :nombre_perfil, presence: true , 
+                            uniqueness: true,
+                            format:
+                            {
+                              with: /\A[a-zA-Z]+\z/ ,
+                              message: 'Debe tener un formato correcto'
+                            }
+
 #AQUI DEFINIMOS NOMBRE_COMPLETO
   def nombre_completo
   	primer_nombre + " " + primer_apellido

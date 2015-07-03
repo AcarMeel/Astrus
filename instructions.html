@@ -127,9 +127,21 @@ classes, '.form-horizontal' or '.form-inline', as the following:
   <li>en los controladores estan las alertas de si se creo,modifico o elimino un usuario</li>
   <li>Recordemos q rails console nos permite hacer modificaciones a la BD, como u=User.first</li>
   <li>Hacemos modificaciones creando nombre_completo en user.rb,show e index en statuses</li>
-  <li>Guardamos lo q hemos hecho hasta ahora, git status para ver q cambios hemos hecho, git add . ,git commit -m "msj"</li>
+  <li>Guardamos lo q hemos hecho hasta ahora, git status para ver q cambios hemos hecho, git add . ,git commit -m "msj", git push origin master</li>
+  <li>Carpeta test. Esta carpeta almacena todos los archivos de prueba. Simular controllers, modificar modelos, etc. Abrir test-->unit-->user_test.rb</li>
+  <li>el proyecto lo probaremos desde la consola, no corriendo en el servidor como tal</li>
+  <li>Iniciamos las pruebas: rake db:migrate, rake db:test:prepare, ruby -Itest test/unit/user_test.rb</li>
+  <li>LO anterior genera un error debido a q busca la columna nombre, para arreglar esto vamos a la carpeta test/fixtures/users.yml y statuses.yml</li>
+  <li>corremos de nuevo ruby -Itest test/unit/user_test.rb</li>
+  <li>Al validar si el nombre es vacio nos da un error al probarlo, para esto corregimos el error en user.rb</li>
+  <li>video 30--> uso de helpers... en app-->helpers-->application_helper.rb</li>
 </body>
 www.descargasdelaweb.com
+
+
+VIDEO 31 Astrus 
+red social ror
+hubo un error sin resolver en la pagina principal, las demas rutas si
 </html>
 
 
