@@ -1,4 +1,5 @@
 class StatusesController < ApplicationController
+  before_filter :authenticate_user!,only: [:new]
   #I WROTE THIS CAUSE I SAW IT ON THE VIDEO--- BY ACARMEEL
   before_action :set_status, only: [:show, :edit, :update, :destroy]
   # GET /statuses

@@ -79,7 +79,7 @@ ent
   integrarlo a nuestra BD debemos correr el comando rake db:migrate
 
   Corremos rake routes para saber q rutas en el proyecto tenemos disponibles para utilizar el modelo de user
-          new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+          new_user_session GET  /users/sign_in(.:format)       devise/sessions#new
             user_session POST   /users/sign_in(.:format)       devise/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
            user_password POST   /users/password(.:format)      devise/passwords#create
@@ -135,6 +135,7 @@ classes, '.form-horizontal' or '.form-inline', as the following:
   <li>corremos de nuevo ruby -Itest test/unit/user_test.rb</li>
   <li>Al validar si el nombre es vacio nos da un error al probarlo, para esto corregimos el error en user.rb</li>
   <li>video 30--> uso de helpers... en app-->helpers-->application_helper.rb</li>
+  <li>video 32--> rails generate integration_test rutas_personalizadas</li>
 </body>
 www.descargasdelaweb.com
 
